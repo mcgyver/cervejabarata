@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "535806840709",
+    "firebase_url": "https://cervejabarata-98496.firebaseio.com",
+    "project_id": "cervejabarata-98496",
+    "storage_bucket": "cervejabarata-98496.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535806840709:android:de52c49397cac82c",
+        "android_client_info": {
+          "package_name": "br.com.devnull.cervejabarata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535806840709-t5emsv9pcbi29dumbnm3to8tt7vdj4ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnuknyW1czJgsLOhT_ADqj8D8kvtbXzIk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
