@@ -8,10 +8,6 @@ import com.facebook.AccessToken
 import com.facebook.AccessTokenTracker
 import com.facebook.FacebookSdk
 
-
-
-
-
 class Splash : AppCompatActivity() {
 
     private val SPLASH_TIME_OUT = 300L
@@ -22,18 +18,14 @@ class Splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         Handler().postDelayed(
                 {
-                    if(!isLoggedIn()) {
+                    val accessToken = AccessToken.getCurrentAccessToken()
+                    if(accessToken == null) {
                         startActivity<MainActivity>()
                     } else {
                         startActivity<DrawerActivity>()
                     }
                     finish()
                 }, SPLASH_TIME_OUT)
-    }
-
-    fun isLoggedIn(): Boolean {
-        val accessToken = AccessToken.getCurrentAccessToken()
-        return accessToken != null
     }
 
 }

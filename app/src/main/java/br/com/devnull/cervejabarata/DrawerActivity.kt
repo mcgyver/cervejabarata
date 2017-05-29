@@ -12,9 +12,9 @@ import android.view.Menu
 import android.view.MenuItem
 import br.com.devnull.cervejabarata.R.id.action_settings
 import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
-import br.com.devnull.cervejabarata.models.Promotion
 import br.com.devnull.cervejabarata.utils.Const
 import com.facebook.login.LoginManager
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_list.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
@@ -84,6 +84,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         if (id == R.id.nav_exit) {
             LoginManager.getInstance().logOut()
+            FirebaseAuth.getInstance().signOut()
             startActivity<MainActivity>()
             finish()
         }
