@@ -25,7 +25,7 @@ class Splash : AppCompatActivity() {
                     if(!isLoggedIn()) {
                         startActivity<MainActivity>()
                     } else {
-                        startActivity<ListActivity>()
+                        startActivity<DrawerActivity>()
                     }
                     finish()
                 }, SPLASH_TIME_OUT)

@@ -20,7 +20,6 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         callbackManager = CallbackManager.Factory.create()
 
         setContentView(R.layout.main_activity)
@@ -29,7 +28,7 @@ class MainActivity : Activity() {
 
         loginButton!!.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
-                startActivity<ListActivity>()
+                startActivity<DrawerActivity>()
                 finish()
             }
 

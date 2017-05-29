@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
-import android.widget.Toast
 import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
 import br.com.devnull.cervejabarata.utils.Const
 import kotlinx.android.synthetic.main.activity_list.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.ValueEventListener
 
 class ListActivity : AppCompatActivity() {
 
@@ -38,7 +34,7 @@ class ListActivity : AppCompatActivity() {
             startActivity<NewPromotionActivity>()
         }
 
-        var promocoes = Const.Promocoes()
+        var promocoes = Const.Promotions()
 
         recycler.setHasFixedSize(true)
         val mLayoutManager =  LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
