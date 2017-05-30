@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import br.com.devnull.cervejabarata.models.User
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -14,6 +15,8 @@ import com.facebook.login.widget.LoginButton
 import com.google.firebase.auth.FacebookAuthProvider
 import org.jetbrains.anko.startActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.vicpin.krealmextensions.save
+import io.realm.Realm
 import kotlinx.android.synthetic.main.main_activity.*
 
 
@@ -40,8 +43,6 @@ class MainActivity : Activity() {
         login_button!!.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
-                startActivity<DrawerActivity>()
-                finish()
             }
 
             override fun onCancel() {
@@ -62,6 +63,12 @@ class MainActivity : Activity() {
         val credential = FacebookAuthProvider.getCredential(token.token)
         mAuth.signInWithCredential(credential).addOnCompleteListener {
             val user = mAuth.currentUser
+            if (user != null) {
+                Realm.init(applicationContext)
+                User(1, user.displayName!!, user.photoUrl.toString(), user.email!!).save()
+                startActivity<DrawerActivity>()
+                finish()
+            }
             Toast.makeText(baseContext, user?.email, Toast.LENGTH_LONG).show()
         }
     }

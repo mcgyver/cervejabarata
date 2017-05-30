@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
+import br.com.devnull.cervejabarata.models.User
 import br.com.devnull.cervejabarata.utils.Const
 import kotlinx.android.synthetic.main.activity_list.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 import com.google.firebase.database.FirebaseDatabase
+import com.vicpin.krealmextensions.allItems
 
 class ListActivity : AppCompatActivity() {
 
@@ -21,6 +23,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
+        val user = User().allItems
         /*myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val value = dataSnapshot.getValue(String::class.java)

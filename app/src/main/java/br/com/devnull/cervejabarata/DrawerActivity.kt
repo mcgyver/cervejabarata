@@ -10,12 +10,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import br.com.devnull.cervejabarata.R.id.action_settings
 import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
+import br.com.devnull.cervejabarata.models.User
 import br.com.devnull.cervejabarata.utils.Const
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
+import com.vicpin.krealmextensions.firstItem
+import io.realm.Realm
+import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.nav_header_drawer.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 
@@ -27,6 +35,19 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
+
+
+
+
+        Realm.init(applicationContext)
+        val user = User().firstItem
+
+        val navigationView = findViewById(R.id.nav_view) as NavigationView
+        val hView = navigationView.getHeaderView(0)
+        val navHeaderName = hView.findViewById(R.id.nav_header_name) as TextView
+        val navHeaderImage = hView.findViewById(R.id.nav_header_image) as ImageView
+        navHeaderName.text = user?.name
+        Picasso.with(applicationContext).load(user?.photoUrl).into(navHeaderImage)
 
         fab.onClick {
             startActivity<NewPromotionActivity>()
@@ -45,7 +66,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawer.setDrawerListener(toggle)
         toggle.syncState()
 
-        val navigationView = findViewById(R.id.nav_view) as NavigationView
+
         navigationView.setNavigationItemSelectedListener(this)
     }
 
@@ -59,15 +80,11 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.drawer, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
 
 
