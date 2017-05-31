@@ -21,24 +21,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/42f4467f45bb511d72abcc92e7f6bf4a9d1e2205/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5c5f16b70a7439422b2ab9212366f80a0f3547ff/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/c0f72497db1a3500a2216c09d8023c21bf42f492/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="8f83a631abfdb790591a720e0cfb5f41329831c3">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c5677c1568956c2fa25cdfb4814b6aaff2f44079/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/jefferson/.android/build-cache/1f10afa20c8ba516668589eaf99420a056372f53/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -48,39 +30,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/f7cea9c480b871839a6d60f81f2187129ebb97bc/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8582f15e9ee3d146cffa87adda46dbfc7822a1b4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/jefferson/.android/build-cache/5646d71c07e52bf916f4f603f62f17781d2613b6/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="7979972576b6dbb1688052e42e5199abb54f81ba">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8666521331924d28fb88e52f7a03f2a892680ff3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations/3.3.1/bacd2ccd9a7f55c4205e02ad4d9183813d0bdcc3/realm-annotations-3.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="bacd2ccd9a7f55c4205e02ad4d9183813d0bdcc3">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/realm-annotations-3.3.1_8bb8035c26c164c306abf32eeb6acdebc9872499/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/b2bc6cf2a69bd5832881c8312e9c4bd84c4ff0a9/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="07d6ee506b0d643cac58d5f1a514a802d359dc87">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a0df2563fa9bda275847da5289818dfb953608e0/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -99,6 +54,87 @@
         revision="25.0.3"
         sha1="de24d8023e8da79f30bee46b298f606e5e758432">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ac2c460546c9eacf72957890f066e453ebf7e830/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/0441cc3ca3586d49f241eb2da208ae844ca34193/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0a534044236cf81b002604643d23e7ca56bd1ee0">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fe7a7e054b822dec6e7993ff50312104c33de58f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/00c3b77629915b8f32ac1ddec6bad13e22f5264e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7b3eaf755284fb08a6d616a55fbb07dc3917d5e7">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_921b62346326996a9c8d1c8d2a30c94954562a97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="24783e5207ed81b571b86056c32e32847bbecc14">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_20f8a019a6d7336ba6d4907e1b9b529d0f397a2f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/db429223a4838c07692242e818d4e475bbb030d9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d79c575e1d97b0298746a4c032a0c1dc201c2f82">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5d92b2b0b1f9ebebf62508fba892de9ce660abbd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/42f4467f45bb511d72abcc92e7f6bf4a9d1e2205/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5c5f16b70a7439422b2ab9212366f80a0f3547ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/c0f72497db1a3500a2216c09d8023c21bf42f492/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8f83a631abfdb790591a720e0cfb5f41329831c3">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c5677c1568956c2fa25cdfb4814b6aaff2f44079/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/f7cea9c480b871839a6d60f81f2187129ebb97bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8582f15e9ee3d146cffa87adda46dbfc7822a1b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations/3.3.1/bacd2ccd9a7f55c4205e02ad4d9183813d0bdcc3/realm-annotations-3.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bacd2ccd9a7f55c4205e02ad4d9183813d0bdcc3">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/realm-annotations-3.3.1_8bb8035c26c164c306abf32eeb6acdebc9872499/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/b2bc6cf2a69bd5832881c8312e9c4bd84c4ff0a9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="07d6ee506b0d643cac58d5f1a514a802d359dc87">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a0df2563fa9bda275847da5289818dfb953608e0/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -126,15 +162,6 @@
         revision="25.0.3"
         sha1="da832806828ba407284c0c4b1d87b8f9ed9f2520">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_98d68805fe323d6f94c8b8a31cd46df69bf86920/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/0441cc3ca3586d49f241eb2da208ae844ca34193/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="0a534044236cf81b002604643d23e7ca56bd1ee0">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fe7a7e054b822dec6e7993ff50312104c33de58f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -174,39 +201,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/00c3b77629915b8f32ac1ddec6bad13e22f5264e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7b3eaf755284fb08a6d616a55fbb07dc3917d5e7">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_921b62346326996a9c8d1c8d2a30c94954562a97/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6461c12a0b8b355a1af6129f00681dec01df4c72">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_20f8a019a6d7336ba6d4907e1b9b529d0f397a2f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/jefferson/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.6_52f534270c98760f11b40337739fa35c8353cebc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/jefferson/.android/build-cache/db429223a4838c07692242e818d4e475bbb030d9/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d79c575e1d97b0298746a4c032a0c1dc201c2f82">
-        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5d92b2b0b1f9ebebf62508fba892de9ce660abbd/classes.dex" />
     </item>
 
 </items>

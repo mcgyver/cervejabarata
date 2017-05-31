@@ -48,7 +48,8 @@ class NewPromotionActivity : AppCompatActivity(), OnMapReadyCallback, LocationLi
 
     private fun getLocation(){
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+        val loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+        Toast.makeText(baseContext, loc.latitude.toString(), Toast.LENGTH_LONG).show()
         //locationManager?.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 5F, this)
     }
 
