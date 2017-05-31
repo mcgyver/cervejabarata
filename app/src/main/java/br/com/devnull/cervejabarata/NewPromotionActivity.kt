@@ -17,19 +17,22 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_new_promotion.*
-import com.google.android.gms.common.api.GoogleApiClient
-
-
+import com.google.android.gms.maps.CameraUpdateFactory
 
 
 class NewPromotionActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener {
 
-
     private val CAMERA_REQUEST = 1888
+    private var location: Location? = null
 
+    override fun onMapReady(map: GoogleMap?) {
+        val center = CameraUpdateFactory.newLatLng(LatLng(location!!.latitude, location!!.longitude))
+        val zoom = CameraUpdateFactory.zoomTo(15F)
 
-    override fun onMapReady(googleMap: GoogleMap?) {
-        googleMap?.addMarker(MarkerOptions().position(LatLng(0.0, 0.0)).title("Marker"))
+        map?.moveCamera(center)
+        map?.animateCamera(zoom)
+        map?.addMarker(MarkerOptions()
+                .position(LatLng(location!!.latitude, location!!.longitude)).title("Marker"))
     }
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +41,7 @@ class NewPromotionActivity : AppCompatActivity(), OnMapReadyCallback, LocationLi
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-        getLocation()
+        setLocation()
 
         photo_button.setOnClickListener {
             val cameraIntent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
@@ -46,10 +49,10 @@ class NewPromotionActivity : AppCompatActivity(), OnMapReadyCallback, LocationLi
         }
     }
 
-    private fun getLocation(){
+    private fun setLocation(){
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        val loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-        Toast.makeText(baseContext, loc.latitude.toString(), Toast.LENGTH_LONG).show()
+        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+        //Toast.makeText(baseContext, loc.latitude.toString(), Toast.LENGTH_LONG).show()
         //locationManager?.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 5F, this)
     }
 

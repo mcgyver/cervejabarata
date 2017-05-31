@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="24783e5207ed81b571b86056c32e32847bbecc14">
+        sha1="ba6d967a4553d11605f1b4fc323d227630378d82">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_20f8a019a6d7336ba6d4907e1b9b529d0f397a2f/classes.dex" />
     </item>
     <item
