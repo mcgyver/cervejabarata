@@ -24,6 +24,5 @@ class PromotionAdapter(private var promotions: ArrayList<Promotion>) : RecyclerV
         val view = LayoutInflater.from(parent!!.context).inflate(R.layout.promocao_layout, parent, false)
         return PromotionViewHolder(view)
     }
-
 }
 

@@ -57,7 +57,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             startActivity<NewPromotionActivity>()
         }
 
-
         var promotions = arrayListOf<Promotion>()
         val ref = database.child("promotions")
         val query = ref.limitToLast(100)
@@ -73,11 +72,9 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
         })
 
-
         recycler.setHasFixedSize(true)
         val mLayoutManager =  LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = mLayoutManager
-
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(

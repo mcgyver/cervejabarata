@@ -1,8 +1,6 @@
 package br.com.devnull.cervejabarata.models
 
-import com.google.android.gms.maps.model.LatLng
 import io.realm.RealmObject
-import java.util.*
 
 data class Promotion(
         val id: String,
