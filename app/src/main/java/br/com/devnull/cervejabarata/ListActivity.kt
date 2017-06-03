@@ -23,16 +23,6 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        val user = User().allItems
-        /*databaseRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val value = dataSnapshot.getValue(String::class.java)
-                Toast.makeText(applicationContext, value, Toast.LENGTH_LONG).show()
-            }
-
-            override fun onCancelled(error: DatabaseError) =
-                    Toast.makeText(applicationContext, error.message, Toast.LENGTH_LONG).show()
-        })*/
         fab.onClick {
             startActivity<NewPromotionActivity>()
         }

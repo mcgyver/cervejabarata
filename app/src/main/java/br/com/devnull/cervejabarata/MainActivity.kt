@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import br.com.devnull.cervejabarata.models.User
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -13,12 +12,11 @@ import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import com.google.firebase.auth.FacebookAuthProvider
-import org.jetbrains.anko.startActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.vicpin.krealmextensions.save
 import io.realm.Realm
 import kotlinx.android.synthetic.main.main_activity.*
-
+import org.jetbrains.anko.startActivity
 
 
 class MainActivity : Activity() {

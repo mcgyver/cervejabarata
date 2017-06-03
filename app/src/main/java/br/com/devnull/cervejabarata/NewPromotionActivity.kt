@@ -8,7 +8,6 @@ import android.widget.Toast
 import br.com.devnull.cervejabarata.models.Promotion
 import com.google.android.gms.location.places.Place
 import com.google.android.gms.location.places.ui.PlacePicker
-import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -17,9 +16,6 @@ import kotlinx.android.synthetic.main.activity_new_promotion.*
 import org.jetbrains.anko.onClick
 import java.io.ByteArrayOutputStream
 import java.util.*
-import com.google.firebase.storage.StorageReference
-
-
 
 
 class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
@@ -31,9 +27,6 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
 
     var storage = FirebaseStorage.getInstance()
     var storageRef = storage.reference
-
-
-
 
     val database : FirebaseDatabase = FirebaseDatabase.getInstance()
     val databaseRef: DatabaseReference = database.getReference("promotions")
@@ -82,15 +75,7 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
                 Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
                 finish()
                 //promotion.save()
-
-
-
             })
-
-
-
-
-
         }
     }
 

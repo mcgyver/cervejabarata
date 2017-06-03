@@ -10,7 +10,7 @@ import com.facebook.FacebookSdk
 
 class Splash : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT = 300L
+    private val SPLASH_TIME_OUT = 2000L
     override fun onCreate(savedInstanceState: Bundle?) {
         FacebookSdk.sdkInitialize(applicationContext)
 
