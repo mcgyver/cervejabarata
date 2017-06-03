@@ -71,22 +71,26 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
 
             }).addOnSuccessListener({ taskSnapshot ->
                 imageUrl = taskSnapshot.downloadUrl.toString()
+                val promotion = Promotion(id.toString(),
+                        beerName = tie_new_beer_name.text.toString(),
+                        beerPlace = place?.name.toString(),
+                        beerPrice = tie_new_beer_price.text.toString().toDouble(),
+                        latitude = place?.latLng?.latitude!!,
+                        longitude = place?.latLng?.longitude!!,
+                        image = imageUrl)
+                databaseRef.child(id.toString()).setValue(promotion)
+                Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
+                finish()
+                //promotion.save()
+
+
+
             })
 
 
-            val promotion = Promotion(id,
-                    beerName = tie_new_beer_name.text.toString(),
-                    beerPlace = place?.name.toString(),
-                    beerPrice = tie_new_beer_price.text.toString().toDouble(),
-                    latLng = place?.latLng as LatLng,
-                    image = imageUrl)
-            //promotion.save()
 
 
-            databaseRef.setValue(promotion)
 
-            Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
-            finish()
         }
     }
 

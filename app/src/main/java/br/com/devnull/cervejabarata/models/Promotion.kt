@@ -5,15 +5,14 @@ import io.realm.RealmObject
 import java.util.*
 
 data class Promotion(
-        val id: UUID,
+        val id: String,
         val beerName: String,
         val beerPrice: Double,
         val beerPlace: String,
-        val latLng: LatLng,
+        val latitude: Double,
+        val longitude: Double,
         val image: String) : RealmObject() {
-    init {
-
-    }
+    constructor() : this ("", "", 0.0, "", 0.0, 0.0, "")
 }
 
 

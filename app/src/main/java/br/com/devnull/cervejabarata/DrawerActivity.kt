@@ -14,18 +14,28 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.devnull.cervejabarata.R.id.action_settings
 import br.com.devnull.cervejabarata.adapters.PromotionAdapter
+import br.com.devnull.cervejabarata.models.Promotion
 import br.com.devnull.cervejabarata.models.User
-import br.com.devnull.cervejabarata.utils.Const
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import com.vicpin.krealmextensions.firstItem
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_list.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ValueEventListener
+
+
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    val database : DatabaseReference = FirebaseDatabase.getInstance().reference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +44,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         setSupportActionBar(toolbar)
 
         Realm.init(applicationContext)
-        val user = User().firstItem
+        var user = User().firstItem
 
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         val hView = navigationView.getHeaderView(0)
@@ -46,13 +56,28 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         fab.onClick {
             startActivity<NewPromotionActivity>()
         }
-        var promotions = Const.Promotions()
+
+
+        var promotions = arrayListOf<Promotion>()
+        val ref = database.child("promotions")
+        val query = ref.limitToLast(100)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (singleSnapshot in dataSnapshot.children) {
+                    promotions.add(singleSnapshot.getValue(Promotion::class.java))
+                    val adapter = PromotionAdapter(promotions)
+                    recycler.adapter = adapter
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
+
 
         recycler.setHasFixedSize(true)
         val mLayoutManager =  LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = mLayoutManager
-        val adapter = PromotionAdapter(promotions)
-        recycler.adapter = adapter
+
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(
@@ -62,6 +87,24 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
 
         navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var promotions = arrayListOf<Promotion>()
+        val ref = database.child("promotions")
+        val query = ref.limitToLast(100)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (singleSnapshot in dataSnapshot.children) {
+                    promotions.add(singleSnapshot.getValue(Promotion::class.java))
+                    val adapter = PromotionAdapter(promotions)
+                    recycler.adapter = adapter
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
     }
 
     override fun onBackPressed() {
@@ -81,16 +124,12 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-
-        if (id == action_settings) {
-            return true
-        }
+        if (id == action_settings) return true
 
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         val id = item.itemId
 
         if (id == R.id.nav_exit) {
