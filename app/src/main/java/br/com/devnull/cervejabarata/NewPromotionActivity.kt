@@ -1,82 +1,100 @@
 package br.com.devnull.cervejabarata
 
-
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import br.com.devnull.cervejabarata.models.Promotion
+import com.google.android.gms.location.places.Place
+import com.google.android.gms.location.places.ui.PlacePicker
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_new_promotion.*
-import com.google.android.gms.maps.CameraUpdateFactory
+import org.jetbrains.anko.onClick
+import java.io.ByteArrayOutputStream
+import java.util.*
 
 
-class NewPromotionActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener {
+class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
 
-    private val CAMERA_REQUEST = 1888
-    private var location: Location? = null
+    private val CAMERA_REQUEST = 1
+    private val PLACE_PICKER_REQUEST = 2
 
-    override fun onMapReady(map: GoogleMap?) {
-        val center = CameraUpdateFactory.newLatLng(LatLng(location!!.latitude, location!!.longitude))
-        val zoom = CameraUpdateFactory.zoomTo(15F)
+    private var place: Place? = null
 
-        map?.moveCamera(center)
-        map?.animateCamera(zoom)
-        map?.addMarker(MarkerOptions()
-                .position(LatLng(location!!.latitude, location!!.longitude)).title("Marker"))
-    }
+
+    var storage = FirebaseStorage.getInstance("promotions")
+    var storageRef = storage.reference
+
+
+    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+    val databaseRef: DatabaseReference = database.getReference("promotions")
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_promotion)
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-        setLocation()
-
-        photo_button.setOnClickListener {
+        choose_place_button.onClick {
+            val builder = PlacePicker.IntentBuilder()
+            startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST)
+        }
+        photo_button.onClick {
             val cameraIntent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(cameraIntent, CAMERA_REQUEST)
         }
-    }
 
-    private fun setLocation(){
-        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-        //Toast.makeText(baseContext, loc.latitude.toString(), Toast.LENGTH_LONG).show()
-        //locationManager?.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 5F, this)
-    }
+        ok_button.onClick {
+            val id = UUID.randomUUID()
+            val mountainsRef = storageRef.child(id.toString())
+            var imageUrl = ""
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            val photo = data.extras.get("data") as Bitmap
-            foto_nova_promocao.setImageBitmap(photo)
+            Realm.init(applicationContext)
+
+            photo_new_promotion.isDrawingCacheEnabled = true
+            photo_new_promotion.buildDrawingCache();
+
+            val bitmap = photo_new_promotion.drawingCache
+            val baos = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            val data = baos.toByteArray()
+
+            val uploadTask = mountainsRef.putBytes(data)
+            uploadTask.addOnFailureListener({
+
+            }).addOnSuccessListener({ taskSnapshot ->
+                imageUrl = taskSnapshot.downloadUrl.toString()
+            })
+
+
+            val promotion = Promotion(id,
+                    beerName = tie_new_beer_name.text.toString(),
+                    beerPlace = place?.name.toString(),
+                    beerPrice = tie_new_beer_price.text.toString().toDouble(),
+                    latLng = place?.latLng as LatLng,
+                    image = imageUrl)
+            //promotion.save()
+
+
+            databaseRef.setValue(promotion)
+
+            Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
+            finish()
         }
     }
 
-    override fun onLocationChanged(location: Location?) {
-        Toast.makeText(baseContext, "Current Location: $location?.getLatitude()  $location?.getLongitude()", Toast.LENGTH_LONG).show()
-    }
-
-    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-        Toast.makeText(baseContext, "NOVO", Toast.LENGTH_LONG).show()
-    }
-
-    override fun onProviderEnabled(provider: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onProviderDisabled(provider: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent) {
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+            val photo = intent.extras.get("data") as Bitmap?
+            photo_new_promotion.setImageBitmap(photo)
+        }
+        else if (requestCode === PLACE_PICKER_REQUEST && resultCode === Activity.RESULT_OK) {
+                place =  PlacePicker.getPlace(this, intent)
+                choose_place_button.text =  place?.name
+        }
     }
 
 }

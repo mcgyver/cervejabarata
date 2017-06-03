@@ -35,10 +35,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-
-
-
-
         Realm.init(applicationContext)
         val user = User().firstItem
 

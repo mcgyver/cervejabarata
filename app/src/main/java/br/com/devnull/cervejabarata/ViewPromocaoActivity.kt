@@ -11,7 +11,7 @@ class ViewPromocaoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_promocao)
         view_cerveja_nome.text = intent.extras.getString("cerveja")
         view_cerveja_mercado.text = intent.extras.getString("mercado")
-        view_cerveja_valor.text = intent.extras.getString("valor")
+        view_cerveja_valor.text = intent.extras.getString("beerPrice")
     }
 
 }

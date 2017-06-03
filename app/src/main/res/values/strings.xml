@@ -8,4 +8,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="exit">Sair</string>
+    <string name="choose_place">Escolha o local</string>
+    <string name="beer_name">Nome da Cerveja</string>
+    <string name="beer_value">Preço</string>
 </resources>

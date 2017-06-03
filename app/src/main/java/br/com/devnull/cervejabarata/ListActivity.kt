@@ -24,7 +24,7 @@ class ListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list)
 
         val user = User().allItems
-        /*myRef.addValueEventListener(object : ValueEventListener {
+        /*databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val value = dataSnapshot.getValue(String::class.java)
                 Toast.makeText(applicationContext, value, Toast.LENGTH_LONG).show()

@@ -12,9 +12,9 @@ class PromocaoAdapter(private var promocoes: ArrayList<Promotion>) : RecyclerVie
     override fun onBindViewHolder(holder: PromocaoViewHolder?, position: Int) {
         val promocao = promocoes[position]
         if (holder != null) {
-            holder.cerveja.text = promocao.nomeCerveja
-            holder.mercado.text = promocao.local
-            holder.valor.text = promocao.valor.toString()
+            holder.cerveja.text = promocao.beerName
+            holder.mercado.text = promocao.beerPlace
+            holder.valor.text = promocao.beerPrice.toString()
         }
     }
 

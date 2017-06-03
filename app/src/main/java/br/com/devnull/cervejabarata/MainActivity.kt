@@ -28,8 +28,6 @@ class MainActivity : Activity() {
     private var loginButton: LoginButton? = null
     private var mAuth = FirebaseAuth.getInstance()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,8 +53,8 @@ class MainActivity : Activity() {
         })
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        callbackManager!!.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent) {
+        callbackManager!!.onActivityResult(requestCode, resultCode, intent)
     }
 
     private fun handleFacebookAccessToken(token : AccessToken) {
@@ -69,7 +67,6 @@ class MainActivity : Activity() {
                 startActivity<DrawerActivity>()
                 finish()
             }
-            Toast.makeText(baseContext, user?.email, Toast.LENGTH_LONG).show()
         }
     }
 

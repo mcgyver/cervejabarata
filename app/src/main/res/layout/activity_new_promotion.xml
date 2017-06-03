@@ -1,33 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/frame_mapa"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+            <ImageView
+                android:id="@+id/photo_new_promotion"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </ImageView>
+        </FrameLayout>
+        <Button
+            android:id="@+id/choose_place_button"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:textColor="@color/black_overlay"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_place"
+            style="@style/choose"/>
 
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        class="com.google.android.gms.maps.SupportMapFragment" />
-    <ImageView
-        android:id="@+id/foto_nova_promocao"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
-    </ImageView>
-    <!--<android.support.design.widget.FloatingActionButton
-        android:id="@+id/photo_button"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:clickable="true"
-        android:foreground="#FF0000"
-        android:foregroundTint="@color/white"
-        android:src="@drawable/ic_camera"
-        app:elevation="4dp"
-        app:rippleColor="@color/white" /> -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_new_beer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/black_overlay">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_new_beer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/beer_name"
+                android:inputType="textPersonName|textCapWords"
+                android:textColor="@color/black_overlay"
+                android:textSize="14sp" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_new_beer_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/black_overlay">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_new_beer_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/beer_value"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black_overlay"
+                android:textSize="14sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/photo_button"
         android:layout_width="wrap_content"
@@ -40,4 +78,16 @@
         android:clickable="true"
         app:rippleColor="@color/white"/>
 
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="@dimen/fab_margin"
+        android:foreground="#0000FF"
+        android:foregroundTint="@color/white"
+        android:src="@drawable/ic_add"
+        android:clickable="true"
+        app:rippleColor="@color/white"/>
+
+</android.support.design.widget.CoordinatorLayout>

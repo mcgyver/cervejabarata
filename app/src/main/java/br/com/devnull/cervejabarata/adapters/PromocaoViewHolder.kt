@@ -15,7 +15,7 @@ class PromocaoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val intent = Intent(view.context, ViewPromocaoActivity::class.java)
             intent.putExtra("cerveja", cerveja.text)
             intent.putExtra("mercado", mercado.text)
-            intent.putExtra("valor", valor.text)
+            intent.putExtra("beerPrice", valor.text)
             view.context.startActivity(intent)
         }
 

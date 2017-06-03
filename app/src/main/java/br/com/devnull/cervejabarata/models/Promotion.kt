@@ -1,4 +1,19 @@
 package br.com.devnull.cervejabarata.models
 
-data class Promotion(val id: Int, val nomeCerveja: String, val valor: Double, val local: String )
+import com.google.android.gms.maps.model.LatLng
+import io.realm.RealmObject
+import java.util.*
+
+data class Promotion(
+        val id: UUID,
+        val beerName: String,
+        val beerPrice: Double,
+        val beerPlace: String,
+        val latLng: LatLng,
+        val image: String)  {
+    init {
+
+    }
+}
+
 
