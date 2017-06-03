@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
-import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
+import br.com.devnull.cervejabarata.adapters.PromotionAdapter
 import br.com.devnull.cervejabarata.models.User
 import br.com.devnull.cervejabarata.utils.Const
 import kotlinx.android.synthetic.main.activity_list.*
@@ -42,7 +42,7 @@ class ListActivity : AppCompatActivity() {
         recycler.setHasFixedSize(true)
         val mLayoutManager =  LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = mLayoutManager
-        val adapter = PromocaoAdapter(promocoes)
+        val adapter = PromotionAdapter(promocoes)
         recycler.adapter = adapter
     }
 

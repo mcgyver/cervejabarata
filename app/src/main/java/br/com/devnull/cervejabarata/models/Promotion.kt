@@ -10,7 +10,7 @@ data class Promotion(
         val beerPrice: Double,
         val beerPlace: String,
         val latLng: LatLng,
-        val image: String)  {
+        val image: String) : RealmObject() {
     init {
 
     }

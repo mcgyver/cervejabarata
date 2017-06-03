@@ -17,6 +17,9 @@ import kotlinx.android.synthetic.main.activity_new_promotion.*
 import org.jetbrains.anko.onClick
 import java.io.ByteArrayOutputStream
 import java.util.*
+import com.google.firebase.storage.StorageReference
+
+
 
 
 class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
@@ -26,9 +29,10 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
 
     private var place: Place? = null
 
-
-    var storage = FirebaseStorage.getInstance("promotions")
+    var storage = FirebaseStorage.getInstance()
     var storageRef = storage.reference
+
+
 
 
     val database : FirebaseDatabase = FirebaseDatabase.getInstance()
@@ -55,7 +59,7 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
             Realm.init(applicationContext)
 
             photo_new_promotion.isDrawingCacheEnabled = true
-            photo_new_promotion.buildDrawingCache();
+            photo_new_promotion.buildDrawingCache()
 
             val bitmap = photo_new_promotion.drawingCache
             val baos = ByteArrayOutputStream()

@@ -13,7 +13,7 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.devnull.cervejabarata.R.id.action_settings
-import br.com.devnull.cervejabarata.adapters.PromocaoAdapter
+import br.com.devnull.cervejabarata.adapters.PromotionAdapter
 import br.com.devnull.cervejabarata.models.User
 import br.com.devnull.cervejabarata.utils.Const
 import com.facebook.login.LoginManager
@@ -21,9 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.vicpin.krealmextensions.firstItem
 import io.realm.Realm
-import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.activity_list.*
-import kotlinx.android.synthetic.main.nav_header_drawer.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 
@@ -53,7 +51,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         recycler.setHasFixedSize(true)
         val mLayoutManager =  LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = mLayoutManager
-        val adapter = PromocaoAdapter(promotions)
+        val adapter = PromotionAdapter(promotions)
         recycler.adapter = adapter
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout

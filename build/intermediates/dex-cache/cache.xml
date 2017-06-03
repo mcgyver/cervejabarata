@@ -16,8 +16,26 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="d24552e965b9ce7561b608909641b2c8d2c1acb2">
+        sha1="601d56210b288a524a7b60290cdc3f74a15d3852">
         <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_20f8a019a6d7336ba6d4907e1b9b529d0f397a2f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/596e20e235df4a7bd36712a77152af34be9747dd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3dbaff65d26258306561d545f88d6712ac41dd46">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_adb72439d6a9203e9078df2e8b076bfd42be053e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jefferson/.android/build-cache/10ef48664f4bee555ce26e7444cbd39351983f64/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ba4defc8cb4ed5b90b8ef71602722cdeebe507cd">
+        <dex dex="/Users/jefferson/AndroidStudioProjects/cervejabarata/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1095e9f1427391a902ba40a520032560d004c790/classes.dex" />
     </item>
 
 </items>
