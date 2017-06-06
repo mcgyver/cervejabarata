@@ -1,7 +1,5 @@
 package br.com.devnull.cervejabarata.models
 
-import io.realm.RealmObject
-
 data class Promotion(
         val id: String,
         val beerName: String,
@@ -9,7 +7,7 @@ data class Promotion(
         val beerPlace: String,
         val latitude: Double,
         val longitude: Double,
-        val image: String) : RealmObject() {
+        val image: String)  {
     constructor() : this ("", "", 0.0, "", 0.0, 0.0, "")
 }
 

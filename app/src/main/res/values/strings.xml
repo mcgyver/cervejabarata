@@ -11,4 +11,5 @@
     <string name="choose_place">Escolha o local</string>
     <string name="beer_name">Nome da Cerveja</string>
     <string name="beer_value">Preço</string>
+    <string name="login_error">Falha ao logar</string>
 </resources>

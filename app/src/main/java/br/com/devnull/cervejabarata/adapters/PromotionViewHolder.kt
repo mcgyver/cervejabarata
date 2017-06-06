@@ -5,12 +5,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
 import br.com.devnull.cervejabarata.R
-import br.com.devnull.cervejabarata.ViewPromocaoActivity
+import br.com.devnull.cervejabarata.ViewPromotionActivity
 
 class PromotionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     init {
         itemView.setOnClickListener {
-            val intent = Intent(view.context, ViewPromocaoActivity::class.java)
+            val intent = Intent(view.context, ViewPromotionActivity::class.java)
             intent.putExtra("cerveja", cerveja.text)
             intent.putExtra("mercado", mercado.text)
             intent.putExtra("beerPrice", valor.text)

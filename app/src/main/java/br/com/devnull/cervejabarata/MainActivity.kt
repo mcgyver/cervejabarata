@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import br.com.devnull.cervejabarata.models.User
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -42,11 +43,11 @@ class MainActivity : Activity() {
             }
 
             override fun onCancel() {
-                info!!.text = "Login attempt cancelled."
+                Toast.makeText(this@MainActivity, getString(R.string.login_error), Toast.LENGTH_LONG).show()
             }
 
             override fun onError(e: FacebookException) {
-                info!!.text = "Login attempt failed."
+                Toast.makeText(this@MainActivity, getString(R.string.login_error), Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -61,7 +62,7 @@ class MainActivity : Activity() {
             val user = mAuth.currentUser
             if (user != null) {
                 Realm.init(applicationContext)
-                User(1, user.displayName!!, user.photoUrl.toString(), user.email!!).save()
+                User(0, user.displayName!!, user.photoUrl.toString(), user.email!!).save()
                 startActivity<DrawerActivity>()
                 finish()
             }

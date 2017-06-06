@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListActivity" />
-        <activity android:name=".ViewPromocaoActivity" />
+        <activity android:name=".ViewPromotionActivity" />
         <activity android:name=".NewPromotionActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
