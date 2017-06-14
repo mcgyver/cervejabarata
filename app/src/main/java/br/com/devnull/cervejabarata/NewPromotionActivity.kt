@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import br.com.devnull.cervejabarata.models.Promotion
 import com.google.android.gms.location.places.Place
@@ -34,7 +35,6 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_promotion)
-
         choose_place_button.onClick {
             val builder = PlacePicker.IntentBuilder()
             startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST)
@@ -47,7 +47,7 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
         ok_button.onClick {
             val id = UUID.randomUUID()
             val mountainsRef = storageRef.child(id.toString())
-            var imageUrl = ""
+            var imageUrl : String
 
             Realm.init(applicationContext)
 
@@ -74,17 +74,17 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
                 databaseRef.child(id.toString()).setValue(promotion)
                 Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
                 finish()
-                //promotion.save()
             })
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            val photo = intent.extras.get("data") as Bitmap?
+            tvi_take_a_pic.visibility = View.GONE
+            val photo = intent?.extras?.get("data") as Bitmap?
             photo_new_promotion.setImageBitmap(photo)
         }
-        else if (requestCode === PLACE_PICKER_REQUEST && resultCode === Activity.RESULT_OK) {
+        else if (requestCode == PLACE_PICKER_REQUEST && resultCode == Activity.RESULT_OK) {
                 place =  PlacePicker.getPlace(this, intent)
                 choose_place_button.text =  place?.name
         }

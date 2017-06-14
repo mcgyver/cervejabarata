@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="firebase-analytics-10.2.6">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/db429223a4838c07692242e818d4e475bbb030d9/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/db429223a4838c07692242e818d4e475bbb030d9/output/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.6.aar/d694a37069bcd7b63c77b9440572bab1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.2.6.aar/d694a37069bcd7b63c77b9440572bab1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
