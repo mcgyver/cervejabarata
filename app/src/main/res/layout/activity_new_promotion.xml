@@ -40,16 +40,19 @@
                 android:clickable="true"
                 app:rippleColor="@color/white"/>
         </FrameLayout>
+
         <Button
             android:id="@+id/choose_place_button"
-            android:layout_margin="16dp"
-            android:background="@color/white"
-            android:textColor="@color/black_overlay"
-            android:textAlignment="center"
+            style="@style/choose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
             android:text="@string/choose_place"
-            style="@style/choose"/>
+            android:textAlignment="center"
+            android:textColor="@color/black_overlay"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
         <android.support.design.widget.TextInputLayout
