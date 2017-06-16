@@ -3,8 +3,10 @@ package br.com.devnull.cervejabarata
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import br.com.devnull.cervejabarata.models.Promotion
 import com.google.android.gms.location.places.Place
@@ -14,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_new_promotion.*
+import org.jetbrains.anko.imageBitmap
 import org.jetbrains.anko.onClick
 import java.io.ByteArrayOutputStream
 import java.util.*
@@ -32,9 +35,11 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
     val database : FirebaseDatabase = FirebaseDatabase.getInstance()
     val databaseRef: DatabaseReference = database.getReference("promotions")
 
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_promotion)
+
         choose_place_button.onClick {
             val builder = PlacePicker.IntentBuilder()
             startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST)
@@ -49,17 +54,13 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
             val mountainsRef = storageRef.child(id.toString())
             var imageUrl : String
 
-            Realm.init(applicationContext)
+            val drawable = photo_new_promotion?.drawable as BitmapDrawable
+            val bitmap = drawable.bitmap
+            val stream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            val imageInBytes = stream.toByteArray()
 
-            photo_new_promotion.isDrawingCacheEnabled = true
-            photo_new_promotion.buildDrawingCache()
-
-            val bitmap = photo_new_promotion.drawingCache
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val data = baos.toByteArray()
-
-            val uploadTask = mountainsRef.putBytes(data)
+            val uploadTask = mountainsRef.putBytes(imageInBytes)
             uploadTask.addOnFailureListener({
 
             }).addOnSuccessListener({ taskSnapshot ->
@@ -81,8 +82,9 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             tvi_take_a_pic.visibility = View.GONE
-            val photo = intent?.extras?.get("data") as Bitmap?
-            photo_new_promotion.setImageBitmap(photo)
+            val image = intent?.extras?.get("data") as Bitmap?
+            photo_new_promotion?.setImageBitmap(image)
+
         }
         else if (requestCode == PLACE_PICKER_REQUEST && resultCode == Activity.RESULT_OK) {
                 place =  PlacePicker.getPlace(this, intent)
