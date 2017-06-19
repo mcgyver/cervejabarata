@@ -50,7 +50,9 @@
         </activity>
         <activity android:name=".ListActivity" />
         <activity android:name=".ViewPromotionActivity" />
-        <activity android:name=".NewPromotionActivity" />
+        <activity
+            android:name=".NewPromotionActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

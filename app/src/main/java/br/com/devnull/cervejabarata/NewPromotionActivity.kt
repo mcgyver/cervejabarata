@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -20,6 +21,8 @@ import org.jetbrains.anko.imageBitmap
 import org.jetbrains.anko.onClick
 import java.io.ByteArrayOutputStream
 import java.util.*
+import android.view.MenuInflater
+import android.view.MenuItem
 
 
 class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
@@ -40,6 +43,8 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_promotion)
 
+
+
         choose_place_button.onClick {
             val builder = PlacePicker.IntentBuilder()
             startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST)
@@ -49,7 +54,7 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
             startActivityForResult(cameraIntent, CAMERA_REQUEST)
         }
 
-        ok_button.onClick {
+        /*ok_button.onClick {
             val id = UUID.randomUUID()
             val mountainsRef = storageRef.child(id.toString())
             var imageUrl : String
@@ -76,12 +81,11 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
                 Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
                 finish()
             })
-        }
+        }*/
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            tvi_take_a_pic.visibility = View.GONE
             val image = intent?.extras?.get("data") as Bitmap?
             photo_new_promotion?.setImageBitmap(image)
 
@@ -92,4 +96,44 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_new_promotion, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId) {
+            R.id.menu_new_promotion_ok -> {
+                val id = UUID.randomUUID()
+                val mountainsRef = storageRef.child(id.toString())
+                var imageUrl : String
+
+                val drawable = photo_new_promotion?.drawable as BitmapDrawable
+                val bitmap = drawable.bitmap
+                val stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+                val imageInBytes = stream.toByteArray()
+
+                val uploadTask = mountainsRef.putBytes(imageInBytes)
+                uploadTask.addOnFailureListener({
+
+                }).addOnSuccessListener({ taskSnapshot ->
+                    imageUrl = taskSnapshot.downloadUrl.toString()
+                    val promotion = Promotion(id.toString(),
+                            beerName = tie_new_beer_name.text.toString(),
+                            beerPlace = place?.name.toString(),
+                            beerPrice = tie_new_beer_price.text.toString().toDouble(),
+                            latitude = place?.latLng?.latitude!!,
+                            longitude = place?.latLng?.longitude!!,
+                            image = imageUrl)
+                    databaseRef.child(id.toString()).setValue(promotion)
+                    Toast.makeText(baseContext, "Promoção salva com sucesso!", Toast.LENGTH_LONG).show()
+                    finish()
+                })
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

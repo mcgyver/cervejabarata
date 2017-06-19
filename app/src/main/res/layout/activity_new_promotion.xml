@@ -1,8 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp">
+
+            <ImageView
+                android:id="@+id/photo_new_promotion"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#00A8EC"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/photo_button"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:backgroundTint="#FF0000"
+                android:foreground="#FF0000"
+                android:foregroundTint="@color/white"
+                android:src="@drawable/ic_camera"
+                android:clickable="true"
+                />
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/choose_place_button"
+            style="@style/choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/choose_place"
+            android:textAlignment="center"
+            android:textColor="@color/black_overlay"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_new_beer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/black_overlay">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_new_beer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/beer_name"
+                android:inputType="textPersonName|textCapWords"
+                android:textColor="@color/black_overlay"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_new_beer_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/black_overlay">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_new_beer_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/beer_value"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black_overlay"
+                android:textSize="14sp" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+
+</ScrollView>
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/new_promotion_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -103,4 +205,4 @@
         android:clickable="true"
         app:rippleColor="@color/white"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout> -->
