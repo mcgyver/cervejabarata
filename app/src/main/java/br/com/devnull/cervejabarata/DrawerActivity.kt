@@ -62,11 +62,9 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val query = ref.limitToLast(100)
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (singleSnapshot in dataSnapshot.children) {
-                    promotions.add(singleSnapshot.getValue(Promotion::class.java))
-                    val adapter = PromotionAdapter(promotions)
-                    recycler.adapter = adapter
-                }
+                dataSnapshot.children.mapTo(promotions) { it.getValue(Promotion::class.java) }
+                val adapter = PromotionAdapter(promotions)
+                recycler.adapter = adapter
             }
             override fun onCancelled(databaseError: DatabaseError) {
             }

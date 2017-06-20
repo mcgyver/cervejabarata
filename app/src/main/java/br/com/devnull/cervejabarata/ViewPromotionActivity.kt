@@ -28,9 +28,9 @@ class ViewPromotionActivity : AppCompatActivity(), OnMapReadyCallback {
         view_beer_market.text = intent.extras.getString("mercado")
         view_beer_price.text = intent.extras.getString("beerPrice")
 
-        val mapFragment = supportFragmentManager
+        /*val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        mapFragment.getMapAsync(this)*/
 
     }
 
