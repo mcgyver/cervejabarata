@@ -88,11 +88,12 @@ class NewPromotionActivity : android.support.v7.app.AppCompatActivity() {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             val image = intent?.extras?.get("data") as Bitmap?
             photo_new_promotion?.setImageBitmap(image)
+            tvi_take_a_pic.visibility = View.INVISIBLE
 
         }
         else if (requestCode == PLACE_PICKER_REQUEST && resultCode == Activity.RESULT_OK) {
-                place =  PlacePicker.getPlace(this, intent)
-                choose_place_button.text =  place?.name
+            place =  PlacePicker.getPlace(this, intent)
+            choose_place_button.text =  place?.name
         }
     }
 

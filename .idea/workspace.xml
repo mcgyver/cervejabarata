@@ -11,13 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b057968a-e643-42bd-a5ea-a02b9bfa2951" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_confirmar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_new_promotion.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
     </list>
     <ignored path="Android-FacebookLogin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,35 +60,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NewPromotionActivity.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewPromotionActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="151">
+              <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
               <folding>
                 <element signature="e#38#908#0" expanded="true" />
-                <marker date="1497833175000" expanded="false" signature="45:846" ph="..." />
+                <marker date="1497917995000" expanded="false" signature="45:846" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_new_promotion.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_new_promotion.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-176">
+              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
               <folding>
-                <marker date="1497839515000" expanded="false" signature="5312:5332" ph="&quot;Tire uma foto da promoção&quot;" />
-                <marker date="1497839515000" expanded="false" signature="5682:5701" ph="&quot;16dp&quot;" />
-                <marker date="1497839515000" expanded="false" signature="6281:6303" ph="&quot;Escolha o local&quot;" />
-                <marker date="1497839515000" expanded="false" signature="7031:7050" ph="&quot;Nome da Cerveja&quot;" />
-                <marker date="1497839515000" expanded="false" signature="7828:7848" ph="&quot;Preço&quot;" />
-                <marker date="1497839515000" expanded="false" signature="8334:8353" ph="&quot;16dp&quot;" />
+                <element signature="e#1826#1846#0" expanded="true" />
+                <marker date="1497910595000" expanded="false" signature="5662:5682" ph="&quot;Tire uma foto da promoção&quot;" />
+                <marker date="1497910595000" expanded="false" signature="6032:6051" ph="&quot;16dp&quot;" />
+                <marker date="1497910595000" expanded="false" signature="6631:6653" ph="&quot;Escolha o local&quot;" />
+                <marker date="1497910595000" expanded="false" signature="7381:7400" ph="&quot;Nome da Cerveja&quot;" />
+                <marker date="1497910595000" expanded="false" signature="8178:8198" ph="&quot;Preço&quot;" />
+                <marker date="1497910595000" expanded="false" signature="8684:8703" ph="&quot;16dp&quot;" />
               </folding>
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2">
+          <provider editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -2152,8 +2149,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/menu_new_promotion.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_new_promotion.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt" />
       </list>
     </option>
   </component>
@@ -2877,7 +2874,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719547" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32719547" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -2885,7 +2882,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.398017" sideWeight="0.4911147" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398017" sideWeight="0.4911147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -3322,33 +3319,34 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="-176">
+          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
           <folding>
-            <element signature="e#38#908#0" expanded="true" />
-            <marker date="1497833175000" expanded="false" signature="45:846" ph="..." />
+            <element signature="e#1826#1846#0" expanded="true" />
+            <marker date="1497910595000" expanded="false" signature="5662:5682" ph="&quot;Tire uma foto da promoção&quot;" />
+            <marker date="1497910595000" expanded="false" signature="6032:6051" ph="&quot;16dp&quot;" />
+            <marker date="1497910595000" expanded="false" signature="6631:6653" ph="&quot;Escolha o local&quot;" />
+            <marker date="1497910595000" expanded="false" signature="7381:7400" ph="&quot;Nome da Cerveja&quot;" />
+            <marker date="1497910595000" expanded="false" signature="8178:8198" ph="&quot;Preço&quot;" />
+            <marker date="1497910595000" expanded="false" signature="8684:8703" ph="&quot;16dp&quot;" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_promotion.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/devnull/cervejabarata/NewPromotionActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
           <folding>
-            <marker date="1497839515000" expanded="false" signature="5312:5332" ph="&quot;Tire uma foto da promoção&quot;" />
-            <marker date="1497839515000" expanded="false" signature="5682:5701" ph="&quot;16dp&quot;" />
-            <marker date="1497839515000" expanded="false" signature="6281:6303" ph="&quot;Escolha o local&quot;" />
-            <marker date="1497839515000" expanded="false" signature="7031:7050" ph="&quot;Nome da Cerveja&quot;" />
-            <marker date="1497839515000" expanded="false" signature="7828:7848" ph="&quot;Preço&quot;" />
-            <marker date="1497839515000" expanded="false" signature="8334:8353" ph="&quot;16dp&quot;" />
+            <element signature="e#38#908#0" expanded="true" />
+            <marker date="1497917995000" expanded="false" signature="45:846" ph="..." />
           </folding>
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
   </component>

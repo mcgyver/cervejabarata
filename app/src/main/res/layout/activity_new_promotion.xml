@@ -10,8 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:focusable="true"
-        android:focusableInTouchMode="true">>
-
+        android:focusableInTouchMode="true">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="225dp">
@@ -20,7 +19,7 @@
                 android:id="@+id/photo_new_promotion"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="#00A8EC"/>
+                android:background="#FFFFFF"/>
 
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="56dp"
@@ -37,6 +36,13 @@
                 android:src="@drawable/ic_camera"
                 android:clickable="true"
                 />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvi_take_a_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/take_a_pic"
+                android:textSize="24sp" />
 
         </RelativeLayout>
         <Button
